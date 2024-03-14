@@ -3,25 +3,25 @@ package MacronutrientMeals;
 import java.util.ArrayList;
 
 public class FatsFactory {
-    private ArrayList<String> fats;
-    public FatsFactory(){
-        fats = new ArrayList<>();
-        fats.add("Avocado");
-        fats.add("Sour cream");
-        fats.add("Tuna");
-        fats.add("Peanuts");
+
+    public static FatsFactory factory = null;
+    private FatsFactory(){
     }
 
-    public Fats getFats(String dietPlan){
-        String plan = dietPlan.toLowerCase();
-
-        switch(plan){
-            case "no restriction":
-                return fats[x];
-
+    public static FatsFactory getInstance(){
+        if(factory == null) {
+            factory = new FatsFactory();
         }
-
+        return factory;
     }
 
-    private
+    public String getFats(String type) {
+        return switch (type) {
+            case "no restriction" -> new AllFats().getFat();
+            case "vegan" -> new VeganFats().getFat();
+            case "paleo" -> new PaleoFats().getFat();
+            case "nut allergy" -> new NutAllergyFats().getFat();
+            default -> null;
+        };
+    }
 }
