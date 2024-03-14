@@ -1,5 +1,14 @@
 public class Driver {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+
+        Pizza tester = new Pizza.Builder("Pizza Hut", "Small")
+                .addBeef()
+                .addChicken()
+                .addHamAndPineapple()
+                .addMushroom()
+                .addOlives()
+                .build();
+
+        tester.eat();
     }
 }

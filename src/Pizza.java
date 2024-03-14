@@ -2,111 +2,128 @@ import java.util.ArrayList;
 
 public class Pizza {
 
-    private String[] toppings;
+    private ArrayList<String> toppings;
     private String size;
     private String pizzaChain;
 
-    private Pizza(String pizzaChain, String size, String[] toppings) {
-        this.pizzaChain = pizzaChain;
-        this.size = size;
-        this.toppings = toppings;
+    private Pizza(Builder builder) {
+        this.pizzaChain = builder.pizzaChain;
+        this.size = builder.size;
+        this.toppings = builder.toppings;
     }
 
     public void eat() {
-        System.out.println("Pizza Chain: " + pizzaChain);
-        System.out.println("Size: " + size);
-        System.out.print("Toppings: ");
-        if(toppings.length == 0) {
+        System.out.println("Pizza Chain:\t" + pizzaChain);
+        System.out.println("Size:\t\t\t" + size);
+        System.out.println("Toppings: ");
+        if(toppings.size() == 0) {
             System.out.println("n/a");
         }
         else {
             for(String topping: toppings) {
-                System.out.println(topping + ", ");
+                System.out.println("\t" + topping);
             }
         }
     }
 
-    public static class PizzaBuilder {
+    public static class Builder {
         private String pizzaChain;
         private String size;
         private ArrayList<String> toppings;
 
-        public PizzaBuilder(String pizzaChain, String size){
+        private String[] acceptedSizes = {"Small", "Medium", "Large"};
+
+
+        public Builder(String pizzaChain, String size){
             this.pizzaChain = pizzaChain;
             this.size = size;
             toppings = new ArrayList<>();
         }
 
-        private void addTopping(String topping){
+        private boolean sizeCheck(String size) {
+            for (String acceptedSize : acceptedSizes){
+                if (acceptedSize == size) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private Builder addTopping(String topping){
             toppings.add(topping);
+            return this;
         }
-        public void addPepperoni(){
-            addTopping("Pepperoni");
-        }
-
-        public void addSausage() {
-            addTopping("Sausage");
+        public Builder addPepperoni(){
+            return addTopping("Pepperoni");
         }
 
-        public void addMushroom() {
-            addTopping("Mushroom");
+        public Builder addSausage() {
+            return addTopping("Sausage");
         }
 
-        public void addBacon() {
-            addTopping("Bacon");
+        public Builder addMushroom() {
+            return addTopping("Mushroom");
         }
 
-        public void addOnions() {
-            addTopping("Onions");
+        public Builder addBacon() {
+            return addTopping("Bacon");
         }
 
-        public void addExtraCheese() {
-            addTopping("Extra Cheese");
+        public Builder addOnions() {
+            return addTopping("Onions");
         }
 
-        public void addPeppers() {
-            addTopping("Peppers");
+        public Builder addExtraCheese() {
+            return addTopping("Extra Cheese");
         }
 
-        public void addChicken() {
-            addTopping("Chicken");
+        public Builder addPeppers() {
+            return addTopping("Peppers");
         }
 
-        public void addOlives() {
-            addTopping("Olives");
+        public Builder addChicken() {
+            return addTopping("Chicken");
         }
 
-        public void addSpinach() {
-            addTopping("Spinach");
+        public Builder addOlives() {
+            return addTopping("Olives");
         }
 
-        public void addTomatoAndBasil() {
-            addTopping("Tomato and Basil");
+        public Builder addSpinach() {
+            return addTopping("Spinach");
         }
 
-        public void addBeef() {
-            addTopping("Beef");
+        public Builder addTomatoAndBasil() {
+            return addTopping("Tomato and Basil");
         }
 
-        public void addHam() {
-            addTopping("Ham");
+        public Builder addBeef() {
+            return addTopping("Beef");
         }
 
-        public void addPest() {
-            addTopping("Pest");
+        public Builder addHam() {
+            return addTopping("Ham");
         }
 
-        public void addSpicyPork() {
-            addTopping("Spicy Pork");
+        public Builder addPesto() {
+            return addTopping("Pesto");
         }
 
-        public void addHamAndPineapple() {
-            addTopping("Ham and Pineapple");
+        public Builder addSpicyPork() {
+            return addTopping("Spicy Pork");
+        }
+
+        public Builder addHamAndPineapple() {
+            return addTopping("Ham and Pineapple");
         }
 
 
         public Pizza build() {
-            return new Pizza(pizzaChain, size, (String[])toppings.toArray());
+            if (!sizeCheck(size)){
+                size = "Invalid Size";
+            }
+            return new Pizza(this);
         }
 
     }
