@@ -4,6 +4,7 @@ package MacronutrientMeals;
 public class NoRestrictionPlanFactory extends MacronutrientFactory {
 
     private static NoRestrictionPlanFactory factory = null;
+    private String type;
 
     public static MacronutrientFactory getInstance() {
         if (factory == null){
@@ -12,19 +13,22 @@ public class NoRestrictionPlanFactory extends MacronutrientFactory {
         }
         return factory;
     }
+    private NoRestrictionPlanFactory(){
+        type = "no restriction";
+    }
 
     @Override
-    public Fats selectFat() {
+    public String selectFat() {
+        return FatsFactory.getInstance().getFats(type);
+    }
+
+    @Override
+    public String selectCarb() {
         return null;
     }
 
     @Override
-    public Carbs selectCarb() {
-        return null;
-    }
-
-    @Override
-    public Protein selectProtein() {
+    public String selectProtein() {
         return null;
     }
 }
