@@ -1,10 +1,18 @@
+package MoviesAndPizza;
+
 import java.util.ArrayList;
 
 public class Pizza {
+    public enum Size{
+        Large,
+        Medium,
+        Small;
+    }
 
     private ArrayList<String> toppings;
-    private String size;
+    private Size size;
     private String pizzaChain;
+
 
     private Pizza(Builder builder) {
         this.pizzaChain = builder.pizzaChain;
@@ -15,39 +23,32 @@ public class Pizza {
     public void eat() {
         System.out.println("Pizza Chain:\t" + pizzaChain);
         System.out.println("Size:\t\t\t" + size);
-        System.out.println("Toppings: ");
-        if(toppings.size() == 0) {
-            System.out.println("n/a");
+        System.out.print("Toppings: ");
+        if(toppings.isEmpty()) {
+            System.out.println("None");
         }
         else {
-            for(String topping: toppings) {
-                System.out.println("\t" + topping);
-            }
+            System.out.println(toppings.toString());
         }
+
+        System.out.println();
     }
 
     public static class Builder {
         private String pizzaChain;
-        private String size;
+        private Size size;
         private ArrayList<String> toppings;
 
-        private String[] acceptedSizes = {"Small", "Medium", "Large"};
 
-
-        public Builder(String pizzaChain, String size){
-            this.pizzaChain = pizzaChain;
+        public Builder(Size size){
             this.size = size;
             toppings = new ArrayList<>();
+            this.pizzaChain = "n/a";
         }
 
-        private boolean sizeCheck(String size) {
-            for (String acceptedSize : acceptedSizes){
-                if (acceptedSize == size) {
-                    return true;
-                }
-            }
-
-            return false;
+        public Builder addPizzaChain(String pizzaChain){
+            this.pizzaChain = pizzaChain;
+            return this;
         }
 
         private Builder addTopping(String topping){
@@ -120,11 +121,7 @@ public class Pizza {
 
 
         public Pizza build() {
-            if (!sizeCheck(size)){
-                size = "Invalid Size";
-            }
             return new Pizza(this);
         }
-
     }
 }
