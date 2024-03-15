@@ -64,7 +64,6 @@ public class Driver {
                 .addPizzaChain("Little Caesars")
                 .addBacon().addBeef().addHam().addExtraCheese()
                 .addChicken().addMushroom().addOnions().addOlives()
-                .addPesto()
                 .build();
 
         lC1.eat();
