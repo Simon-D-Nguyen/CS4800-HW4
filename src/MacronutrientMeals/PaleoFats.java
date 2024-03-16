@@ -3,7 +3,7 @@ package MacronutrientMeals;
 public class PaleoFats extends Fats{
 
     public PaleoFats() {
-        loadFats();
+        super();
         this.removeFatCategory(FoodCategory.dairy);
     }
 }

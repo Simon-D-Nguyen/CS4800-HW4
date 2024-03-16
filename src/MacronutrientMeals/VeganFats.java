@@ -3,7 +3,7 @@ package MacronutrientMeals;
 public class VeganFats extends Fats{
 
     public VeganFats() {
-        loadFats();
+        super();
         removeFatCategory(FoodCategory.meat);
         removeFatCategory(FoodCategory.dairy);
     }

@@ -2,6 +2,6 @@ package MacronutrientMeals;
 
 public class NoRestrictionFats extends Fats {
     public NoRestrictionFats() {
-        loadFats();
+        super();
     }
 }
