@@ -6,7 +6,7 @@ public class Pizza {
     public enum Size{
         Large,
         Medium,
-        Small;
+        Small
     }
     private ArrayList<String> toppings;
     private Size size;
