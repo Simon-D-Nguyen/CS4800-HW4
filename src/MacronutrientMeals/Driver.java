@@ -3,18 +3,42 @@ package MacronutrientMeals;
 public class Driver {
     public static void main(String[] args) {
 
-        Customer c1 = new Customer("Edward", "no restriction");
+        Macronutrient mealMaker = Macronutrient.getInstance();
+        MealPlan mealHolder;
 
-        DietPlanFactory mealPlanner = DietPlanFactory.getInstance();
-
-        MacronutrientFactory c1Plan = mealPlanner.createPlan(c1.getDietPlan());
-        c1Plan.printPlan();
-
-        Customer c2 = new Customer("Cullen", "no restriction");
-        MacronutrientFactory c2Plan = mealPlanner.createPlan(c2.getDietPlan());
-        c2Plan.printPlan();
+        Customer c1 = new Customer("Edward", DietPlan.NoRestriction);
+        mealHolder = mealMaker.createPlan(c1.getDietPlan());
+        c1.setMealPlan(mealHolder);
+        c1.printBalancedMeal();
 
 
+        Customer c2 = new Customer("Cullen", DietPlan.NoRestriction);
+        mealHolder = mealMaker.createPlan(c2.getDietPlan());
+        c2.setMealPlan(mealHolder);
+        c2.printBalancedMeal();
 
+
+        Customer c3 = new Customer("Sophia H.", DietPlan.Paleo);
+        mealHolder = mealMaker.createPlan(c3.getDietPlan());
+        c3.setMealPlan(mealHolder);
+        c3.printBalancedMeal();
+
+
+        Customer c4 = new Customer("Toffee C.", DietPlan.Paleo);
+        mealHolder = mealMaker.createPlan(c4.getDietPlan());
+        c4.setMealPlan(mealHolder);
+        c4.printBalancedMeal();
+
+
+        Customer c5 = new Customer("Rock L.", DietPlan.Vegan);
+        mealHolder = mealMaker.createPlan(c5.getDietPlan());
+        c5.setMealPlan(mealHolder);
+        c5.printBalancedMeal();
+
+
+        Customer c6 = new Customer("Teri T.", DietPlan.NutAllergy);
+        mealHolder = mealMaker.createPlan(c6.getDietPlan());
+        c6.setMealPlan(mealHolder);
+        c6.printBalancedMeal();
     }
 }
