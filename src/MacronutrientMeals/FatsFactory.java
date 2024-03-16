@@ -15,12 +15,12 @@ public class FatsFactory {
         return factory;
     }
 
-    public String getFats(String type) {
-        return switch (type) {
-            case "no restriction" -> new AllFats().getFat();
-            case "vegan" -> new VeganFats().getFat();
-            case "paleo" -> new PaleoFats().getFat();
-            case "nut allergy" -> new NutAllergyFats().getFat();
+    public Fats getFat(DietPlan fatType) {
+        return switch (fatType) {
+            case DietPlan.NoRestriction -> new NoRestrictionFats();
+            case DietPlan.Paleo -> new PaleoFats();
+            case DietPlan.Vegan -> new VeganFats();
+            case DietPlan.NutAllergy -> new NutAllergyFats();
             default -> null;
         };
     }
