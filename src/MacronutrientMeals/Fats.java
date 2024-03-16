@@ -8,9 +8,9 @@ public class Fats extends Macros{
 
     @Override
     protected void loadOptions() {
-        options.put(FoodCategory.veg, "Avocado");
-        options.put(FoodCategory.dairy, "Sour cream");
-        options.put(FoodCategory.meat, "Tuna");
-        options.put(FoodCategory.nuts, "Peanuts");
+        addFoodByCategory(FoodCategory.veg, "Avocado");
+        addFoodByCategory(FoodCategory.dairy, "Sour cream");
+        addFoodByCategory(FoodCategory.meat, "Tuna");
+        addFoodByCategory(FoodCategory.nuts, "Peanuts");
     }
 }

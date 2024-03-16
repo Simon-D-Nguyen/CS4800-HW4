@@ -1,7 +1,8 @@
 package MacronutrientMeals;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Random;
 
 public abstract class Macros {
@@ -11,34 +12,49 @@ public abstract class Macros {
         meat,
         nuts
     }
-    Map<FoodCategory, String> options = new HashMap<>();
+    HashMap<FoodCategory, HashSet<String>> options =
+            new HashMap<>();
     Random rand = new Random();
+    int numberOfFood = 0;
 
 
     protected abstract void loadOptions();
 
-    protected void removeFoodByCategory(FoodCategory category) {
+    protected void addFoodByCategory(FoodCategory category, String food){
+        if(!options.containsKey(category)){
+            options.put(category, new HashSet<>());
+        }
+        options.get(category).add(food);
+        numberOfFood++;
+    }
+
+    protected void removeFoodCategory(FoodCategory category) {
         options.remove(category);
     }
 
     public String getOption(){
-        String[] outputs = options.values().toArray(new String[0]);
-        return outputs[(rand.nextInt(options.size()))];
+        ArrayList<String> outputs = new ArrayList<>(numberOfFood);
+
+        for(HashSet<String> category: options.values()){
+            outputs.addAll(category);
+        }
+
+        return outputs.get((rand.nextInt(outputs.size())));
     }
 
     public void removeVeg(){
-        removeFoodByCategory(FoodCategory.veg);
+        removeFoodCategory(FoodCategory.veg);
     }
 
     public void removeNuts(){
-        removeFoodByCategory(FoodCategory.nuts);
+        removeFoodCategory(FoodCategory.nuts);
     }
 
     public void removeMeats(){
-        removeFoodByCategory(FoodCategory.meat);
+        removeFoodCategory(FoodCategory.meat);
     }
 
     public void removeDairy(){
-        removeFoodByCategory(FoodCategory.dairy);
+        removeFoodCategory(FoodCategory.dairy);
     }
 }

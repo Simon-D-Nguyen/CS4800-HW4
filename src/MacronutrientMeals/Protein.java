@@ -8,9 +8,9 @@ public class Protein extends Macros{
 
     @Override
     protected void loadOptions() {
-        options.put(FoodCategory.meat, "Fish");
-        options.put(FoodCategory.meat, "Chicken");
-        options.put(FoodCategory.meat, "Beef");
-        options.put(FoodCategory.veg, "Tofu");
+        addFoodByCategory(FoodCategory.meat, "Fish");
+        addFoodByCategory(FoodCategory.meat, "Chicken");
+        addFoodByCategory(FoodCategory.meat, "Beef");
+        addFoodByCategory(FoodCategory.veg, "Tofu");
     }
 }

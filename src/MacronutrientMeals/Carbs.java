@@ -8,9 +8,9 @@ public class Carbs extends Macros {
 
     @Override
     protected void loadOptions() {
-        options.put(FoodCategory.dairy, "Cheese");
-        options.put(FoodCategory.veg, "Bread");
-        options.put(FoodCategory.veg, "Lentils");
-        options.put(FoodCategory.nuts, "Pistachio");
+        addFoodByCategory(FoodCategory.dairy, "Cheese");
+        addFoodByCategory(FoodCategory.veg, "Bread");
+        addFoodByCategory(FoodCategory.veg, "Lentils");
+        addFoodByCategory(FoodCategory.nuts, "Pistachio");
     }
 }
