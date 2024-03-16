@@ -4,5 +4,5 @@ public enum DietPlan {
     NoRestriction,
     Paleo,
     Vegan,
-    NutAllergy;
+    NutAllergy
 }
