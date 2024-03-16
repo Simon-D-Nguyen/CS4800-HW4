@@ -8,7 +8,6 @@ public class Pizza {
         Medium,
         Small;
     }
-
     private ArrayList<String> toppings;
     private Size size;
     private String pizzaChain;
@@ -33,6 +32,7 @@ public class Pizza {
 
         System.out.println();
     }
+
 
     public static class Builder {
         private String pizzaChain;

@@ -41,7 +41,9 @@ public class Driver {
         tester1.eat();
         tester2.eat();
 
+
         System.out.println("== Part 2 ==\n");
+
 
         System.out.println("--- Pizza Hut: ");
         Pizza pH1 = new Pizza.Builder(Pizza.Size.Large)
@@ -92,7 +94,5 @@ public class Driver {
                 .build();
 
         dom2.eat();
-
-
     }
 }
