@@ -3,8 +3,9 @@ package MacronutrientMeals;
 
 public class FatsFactory {
     public static FatsFactory factory = null;
-    private FatsFactory(){}
 
+
+    private FatsFactory(){}
 
     public static FatsFactory getInstance(){
         if(factory == null) {

@@ -2,8 +2,9 @@ package MacronutrientMeals;
 
 public class CarbsFactory {
     public static CarbsFactory factory = null;
-    private CarbsFactory(){}
 
+
+    private CarbsFactory(){}
 
     public static CarbsFactory getInstance(){
         if(factory == null) {

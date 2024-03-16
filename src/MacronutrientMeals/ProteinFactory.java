@@ -4,14 +4,14 @@ public class ProteinFactory {
     public static ProteinFactory factory = null;
 
 
+    private ProteinFactory() {}
+
     public static ProteinFactory getInstance(){
         if(factory == null) {
             factory = new ProteinFactory();
         }
         return factory;
     }
-
-    private ProteinFactory() {}
 
     public Protein getProtein(DietPlan dietPlan) {
         switch (dietPlan) {
