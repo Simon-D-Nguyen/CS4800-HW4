@@ -12,6 +12,18 @@ public class Customer {
         this.mealPlan = null;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setDietPlan(DietPlan dietPlan) {
+        this.dietPlan = dietPlan;
+    }
+
     public DietPlan getDietPlan() {
         return dietPlan;
     }

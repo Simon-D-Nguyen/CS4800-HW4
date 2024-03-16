@@ -14,6 +14,7 @@ public class Macronutrient {
         return planFactory;
     }
 
+    private Macronutrient(){}
 
     public MealPlan createPlan(DietPlan dietPlan) {
         fatMaker = FatsFactory.getInstance();
@@ -26,6 +27,4 @@ public class Macronutrient {
 
         return new MealPlan(fatOptions, carbOptions, proteinOptions);
     }
-
-    private Macronutrient() {}
 }

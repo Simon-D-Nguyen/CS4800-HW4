@@ -12,11 +12,9 @@ public class MealPlan {
         this.proteins = proteins;
     }
 
-
     public void printMealPlan() {
         System.out.println("\t- Carb:\t"+ carbs.getOption());
         System.out.println("\t- Protein:\t"+ proteins.getOption());
         System.out.println("\t- Fat:\t"+ fats.getOption());
-
     }
 }

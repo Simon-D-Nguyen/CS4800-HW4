@@ -5,6 +5,7 @@ public class Fats extends Macros{
     public Fats() {
         loadOptions();
     }
+
     @Override
     protected void loadOptions() {
         options.put(FoodCategory.veg, "Avocado");

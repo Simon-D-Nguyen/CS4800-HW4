@@ -2,7 +2,6 @@ package MacronutrientMeals;
 
 public class ProteinFactory {
     public static ProteinFactory factory = null;
-    private ProteinFactory(){}
 
 
     public static ProteinFactory getInstance(){
@@ -12,6 +11,7 @@ public class ProteinFactory {
         return factory;
     }
 
+    private ProteinFactory() {}
 
     public Protein getProtein(DietPlan dietPlan) {
         switch (dietPlan) {

@@ -12,7 +12,6 @@ public class CarbsFactory {
         return factory;
     }
 
-
     public Carbs getCarbs(DietPlan dietPlan) {
         switch (dietPlan) {
             case DietPlan.NoRestriction:

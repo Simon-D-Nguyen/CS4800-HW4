@@ -17,11 +17,9 @@ public abstract class Macros {
 
     protected abstract void loadOptions();
 
-
     protected void removeFoodByCategory(FoodCategory category) {
         options.remove(category);
     }
-
 
     public String getOption(){
         String[] outputs = options.values().toArray(new String[0]);

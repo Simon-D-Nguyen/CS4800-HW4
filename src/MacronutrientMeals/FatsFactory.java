@@ -13,7 +13,6 @@ public class FatsFactory {
         return factory;
     }
 
-
     public Fats getFats(DietPlan fatType) {
         switch (fatType) {
             case DietPlan.NoRestriction:
