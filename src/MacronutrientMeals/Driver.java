@@ -12,7 +12,7 @@ public class Driver {
         c1.printBalancedMeal();
 
 
-        Customer c2 = new Customer("Cullen", DietPlan.NoRestriction);
+        Customer c2 = new Customer("Cullen", DietPlan.Vegan);
         mealHolder = mealMaker.createPlan(c2.getDietPlan());
         c2.setMealPlan(mealHolder);
         c2.printBalancedMeal();
