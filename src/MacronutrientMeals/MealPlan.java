@@ -1,21 +1,22 @@
 package MacronutrientMeals;
 
 public class MealPlan {
-    private Fats fat;
-    private Carbs carb;
-    private Protein protein;
+    private Fats fats;
+    private Carbs carbs;
+    private Protein proteins;
 
 
     public MealPlan(Fats fats, Carbs carbs, Protein proteins){
-        this.fat = fats;
-        this.carb = carbs;
-        this.protein = proteins;
+        this.fats = fats;
+        this.carbs = carbs;
+        this.proteins = proteins;
     }
 
 
     public void printMealPlan() {
-        System.out.println("Fat: "+ fat.getFat());
-        System.out.println("Carb: "+ carb);
-        System.out.println("Protein"+ protein);
+        System.out.println("\t- Carb:\t"+ carbs.getOption());
+        System.out.println("\t- Protein:\t"+ proteins.getOption());
+        System.out.println("\t- Fat:\t"+ fats.getOption());
+
     }
 }
