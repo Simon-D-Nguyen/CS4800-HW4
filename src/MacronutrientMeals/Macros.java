@@ -23,9 +23,9 @@ public abstract class Macros {
     }
 
 
-    public String getFat(){
-        String[] outputFats = options.values().toArray(new String[0]);
-        return outputFats[(rand.nextInt(options.size()))];
+    public String getOption(){
+        String[] outputs = options.values().toArray(new String[0]);
+        return outputs[(rand.nextInt(options.size()))];
     }
 
     public void removeVeg(){
