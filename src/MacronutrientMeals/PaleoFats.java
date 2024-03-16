@@ -1,8 +1,9 @@
 package MacronutrientMeals;
 
 public class PaleoFats extends Fats{
-    PaleoFats(){
+
+    public PaleoFats() {
         loadFats();
-        removeFat("Sour Cream");
+        this.removeFatCategory(FoodCategory.dairy);
     }
 }
