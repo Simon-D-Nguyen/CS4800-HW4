@@ -1,12 +1,10 @@
 package MacronutrientMeals;
 
-import java.util.ArrayList;
 
 public class FatsFactory {
-
     public static FatsFactory factory = null;
-    private FatsFactory(){
-    }
+    private FatsFactory(){}
+
 
     public static FatsFactory getInstance(){
         if(factory == null) {
@@ -15,7 +13,8 @@ public class FatsFactory {
         return factory;
     }
 
-    public Fats getFat(DietPlan fatType) {
+
+    public Fats getFats(DietPlan fatType) {
         return switch (fatType) {
             case DietPlan.NoRestriction -> new NoRestrictionFats();
             case DietPlan.Paleo -> new PaleoFats();
