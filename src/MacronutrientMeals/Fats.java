@@ -1,8 +1,8 @@
 package MacronutrientMeals;
 
-public abstract class Fats extends Macros{
+public class Fats extends Macros{
 
-    protected Fats() {
+    public Fats() {
         loadOptions();
     }
     @Override
