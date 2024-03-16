@@ -13,8 +13,8 @@ public class CarbsFactory {
     }
 
 
-    public Carbs getCarbs(DietPlan fatType) {
-        switch (fatType) {
+    public Carbs getCarbs(DietPlan dietPlan) {
+        switch (dietPlan) {
             case DietPlan.NoRestriction:
                 return new Carbs();
 
